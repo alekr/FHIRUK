@@ -13,11 +13,11 @@ namespace FHIRUK.Resources
             if (DateTime.Compare(start, end) >= 0)
                 throw new Exception("The specified start date must be earlier than the end date.");
 
-            this.Start = start;
-            this.End = end;
+            this.start = start;
+            this.end = end;
         }
 
-        public DateTime Start { get; private set; } //  <!-- ?? 0..1 Starting time with inclusive boundary -->
-        public DateTime End { get; private set; }   //  <!-- ?? 0..1 End time with inclusive boundary, if not ongoing -->
+        public DateTime start { get; private set; } //  <!-- ?? 0..1 Starting time with inclusive boundary -->
+        public DateTime end { get; private set; }   //  <!-- ?? 0..1 End time with inclusive boundary, if not ongoing -->
     }
 }

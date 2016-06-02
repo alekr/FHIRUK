@@ -8,7 +8,7 @@ using FHIRUK.Resources;
 
 namespace fhirtestdatagen
 {
-    public class HumaneNameGenerator
+    public class HumanNameGenerator
     {
         private List<String> femaleNames = new List<string>();
         private List<String> maleNames = new List<string>();
@@ -20,7 +20,7 @@ namespace fhirtestdatagen
 
         private Random randomGenerator = null;
 
-        public HumaneNameGenerator()
+        public HumanNameGenerator()
         {
             randomGenerator = new Random(Guid.NewGuid().GetHashCode());
 
@@ -45,10 +45,21 @@ namespace fhirtestdatagen
             }
         }
 
-        public void GetRandomName(out List<String> given, out List<String> family, out EnumGender gender)
+        public HumanNames GetRandomNames(out EnumGender gender)
         {
-            given = new List<string>();
-            family = new List<string>();
+            HumanNames names = new HumanNames();
+
+            // generate just one name for now
+            HumanName name = GetRandomName(out gender);
+            names.Add(name);
+
+            return names;
+        }
+
+        public HumanName GetRandomName(out EnumGender gender)
+        {
+            List<string> given = new List<string>();
+            List<string> family = new List<string>();
             gender = EnumGender.UN;
 
             int givenNamesCount = randomGenerator.Next(0, 100) + 1; // returns N: 1 <= N <= 100
@@ -74,6 +85,12 @@ namespace fhirtestdatagen
             }
 
             family = GetNamesFromList(familyNamesCount, familyNames);
+
+            return new HumanName()
+                    {
+                        given = given,
+                        family = family
+                    };
         }
 
         private List<String> GetNamesFromList(int count, List<String> list)

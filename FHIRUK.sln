@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fhirres", "fhirres\fhirres.csproj", "{C7CF6C91-E904-446E-851A-FD281396FC62}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fhirTest", "fhirTest\fhirTest.csproj", "{71B5E7CC-AA80-4007-B3F9-E999B561E8CD}"

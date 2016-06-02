@@ -146,15 +146,15 @@ namespace fhirtestdatagen
 #endif
             Address address = new Address();
 
-            address.Use = use;
+            address.use = use;
             String addressLine = randomGenerator.Next(1, 100).ToString() + " " +
                            streetNames[randomGenerator.Next(0, streetNames.Count)] + " " +
                            streetTypes[randomGenerator.Next(0, streetTypes.Count)];
-            address.Line.Add(addressLine);
+            address.line.Add(addressLine);
             District district = GetRandomDistrict();
-            address.City = district.Town;
-            address.State = district.Region;
-            address.Zip = district.Postcode;
+            address.city = district.Town;
+            address.state = district.Region;
+            address.zip = district.Postcode;
 
             return address;
         }

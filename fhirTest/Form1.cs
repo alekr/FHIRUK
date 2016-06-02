@@ -22,12 +22,12 @@ namespace fhirTest
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             Patient p = new Patient();
-            p.Identifier = new Identifiers() 
+            p.identifier = new Identifiers() 
             {
                 new Identifier 
                 {
-                    Use = EnumIdentifierUse.Usual,
-                    Value = "9990001234"
+                    use = EnumIdentifierUse.Usual,
+                    value = "9990001234"
                 }
             };
 

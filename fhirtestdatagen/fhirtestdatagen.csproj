@@ -55,10 +55,16 @@
     </Compile>
     <Compile Include="gen_address.cs" />
     <Compile Include="gen_id.cs" />
+    <Compile Include="gen_marital.cs" />
     <Compile Include="gen_name.cs" />
+    <Compile Include="gen_organization.cs" />
+    <Compile Include="gen_patient.cs" />
+    <Compile Include="gen_patientcontact.cs" />
     <Compile Include="gen_telecom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sds.cs" />
+    <Compile Include="utils.cs" />
     <EmbeddedResource Include="FormFHIRTestDatGen.resx">
       <DependentUpon>FormFHIRTestDatGen.cs</DependentUpon>
     </EmbeddedResource>
@@ -87,6 +93,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="fhirtestdatagen.ico" />
+    <None Include="img\exportToFile.png" />
+    <None Include="img\copy.png" />
+    <None Include="img\patients.png" />
+    <None Include="img\independent.png" />
+    <None Include="img\trust.png" />
+    <None Include="img\pct.png" />
+    <None Include="img\gp.png" />
     <None Include="img\generate.png" />
   </ItemGroup>
   <ItemGroup>

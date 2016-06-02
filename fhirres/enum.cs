@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace FHIRUK.Resources
 {
-    public enum EnumAddressUse { Undefined, home, work, temp, old };
-    public enum EnumContactSystem { Undefined, phone, fax, email, url };
-    public enum EnumContactUse { Undefined, home, work, temp, old, mobile };
-    public enum EnumOrganizationContactPurpose { Undefined, BILL, ADMIN, HR, PAYOR, PATINF, PRESS };
-    public enum EnumGender { Undefined, F, M, UN };
-    public enum EnumPatientRelationship { Undefined, emergency, family, guardian, friend, partner, work, caregiver, agent, guarantor, owner, parent };
-    public enum EnumHumanNameUse { Undefined, Usual, Official, Temp, Nickname, Anonymous, Old, Maiden };
-    public enum EnumIdentifierUse { Undefined, Usual, Official, Temp, Secondary };
-    public enum EnumMaritalStatus { Undefined, A, D, I, L, M, P, S, T, W };
-    public enum EnumPatientLinkType { Undefined, replace, refer, seealso };
-    public enum EnumOrganizationType { Undefined, prov, dept, icu, team, fed, ins, edu, reli, pharm };
-    public enum EnumLocationType { Undefined, bu, wi, co, ro, ve, ho, ca, rd };
-    public enum EnumLocationStatus { Undefined, active, suspended, inactive };
-    public enum EnumLocationMode { Undefined, instance, kind };
+    public enum EnumAddressUse { undefined, home, work, temp, old };
+    public enum EnumContactSystem { undefined, phone, fax, email, url };
+    public enum EnumContactUse { undefined, home, work, temp, old, mobile };
+    public enum EnumOrganizationContactPurpose { undefined, BILL, ADMIN, HR, PAYOR, PATINF, PRESS };
+    public enum EnumGender { undefined, F, M, UN };
+    public enum EnumPatientRelationship { undefined, emergency, family, guardian, friend, partner, work, caregiver, agent, guarantor, owner, parent };
+    public enum EnumHumanNameUse { undefined, Usual, Official, Temp, Nickname, Anonymous, Old, Maiden };
+    public enum EnumIdentifierUse { undefined, Usual, Official, Temp, Secondary };
+    public enum EnumMaritalStatus { undefined, A, D, I, L, M, P, S, T, W };
+    public enum EnumPatientLinkType { undefined, replace, refer, seealso };
+    public enum EnumOrganizationType { undefined, prov, dept, icu, team, fed, ins, edu, reli, pharm };
+    public enum EnumLocationType { undefined, bu, wi, co, ro, ve, ho, ca, rd };
+    public enum EnumLocationStatus { undefined, active, suspended, inactive };
+    public enum EnumLocationMode { undefined, instance, kind };
     public enum EnumLocationRole
     {
-        Undefined, DX, CVDX, CATH, ECHO, GIDX, ENDOS, RADDX, RADO, RNEU, HOSP,
+        undefined, DX, CVDX, CATH, ECHO, GIDX, ENDOS, RADDX, RADO, RNEU, HOSP,
         CHR, GACH, MHSP, PSYCHF, RH, RHAT, RHII, RHMAD, RHPI, RHPIH, RHPIMS,
         RHPIVS, RHYAD, HU, BMTU, CCU, CHEST, EPIL, ER, ETU, HD, HLAB, INLAB,
         OUTLAB, HRAD, HUSCS, ICU, PEDICU, PEDNICU, INPHARM, MBL, NCCS, NS,
@@ -35,7 +35,7 @@ namespace FHIRUK.Resources
         SURF, DADDR, MOBL, AMB, PHARM, ACC, COMM, CSC, PTRES, SCHOOL, UPC, WORK
     };
 
-    public class EnumConverter
+    public class EnumConversion
     {
         public static String OrganizationContactPurposeToString(EnumOrganizationContactPurpose purpose)
         {

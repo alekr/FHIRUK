@@ -20,10 +20,10 @@ namespace fhirtestdatagen
             // generate at least one phone number 99% of time
             if (randomGenerator.Next(0, 100) > 0)
             {
-                contacts.Add(GeneratePhoneNumber(randomGenerator, EnumContactUse.Undefined));
+                contacts.Add(GeneratePhoneNumber(randomGenerator, EnumContactUse.undefined));
                 // generate second phone number 40% of time
                 if (randomGenerator.Next(0, 100) < 40)
-                    contacts.Add(GeneratePhoneNumber(randomGenerator, contacts[0].Use));
+                    contacts.Add(GeneratePhoneNumber(randomGenerator, contacts[0].use));
                 // provide email address 70% of time"
                 if (randomGenerator.Next(0, 100) < 70)
                     contacts.Add(GenerateEmailAddress(randomGenerator, familyName));
@@ -44,17 +44,17 @@ namespace fhirtestdatagen
         {
             Contact contact = new Contact();
 
-            contact.System = EnumContactSystem.phone;
+            contact.system = EnumContactSystem.phone;
             // EnumContactUse { Undefined, home, work, temp, old, mobile };
             do
             {
-                contact.Use = (EnumContactUse)(randomGenerator.Next(0, 5) + 1);
-            } while (contact.Use == avoidThisContactUse);
-            if (contact.Use == EnumContactUse.mobile)
-                contact.Value = "(07" + randomGenerator.Next(0, 1000).ToString("D3") + ") " +
+                contact.use = (EnumContactUse)(randomGenerator.Next(0, 5) + 1);
+            } while (contact.use == avoidThisContactUse);
+            if (contact.use == EnumContactUse.mobile)
+                contact.value = "(07" + randomGenerator.Next(0, 1000).ToString("D3") + ") " +
                     randomGenerator.Next(0, 1000).ToString("D3") + "-" + randomGenerator.Next(0, 1000).ToString("D3");
             else
-                contact.Value = "(0800) " + randomGenerator.Next(0, 1000).ToString("D3") + "-" + randomGenerator.Next(0, 10000).ToString("D4");
+                contact.value = "(0800) " + randomGenerator.Next(0, 1000).ToString("D3") + "-" + randomGenerator.Next(0, 10000).ToString("D4");
 
             return contact;
         }
@@ -63,9 +63,9 @@ namespace fhirtestdatagen
         {
             Contact contact = new Contact();
 
-            contact.System = EnumContactSystem.email;
-            contact.Use = (EnumContactUse)(randomGenerator.Next(0, 2) + 1); // home or work
-            contact.Value = familyName + randomGenerator.Next(0,1000).ToString("D3") + "@" + 
+            contact.system = EnumContactSystem.email;
+            contact.use = (EnumContactUse)(randomGenerator.Next(0, 2) + 1); // home or work
+            contact.value = familyName + randomGenerator.Next(0,1000).ToString("D3") + "@" + 
                 emailProviders[randomGenerator.Next(0, emailProviders.Length)];
 
             return contact;
@@ -75,9 +75,9 @@ namespace fhirtestdatagen
         {
             Contact contact = new Contact();
 
-            contact.System = EnumContactSystem.url;
-            contact.Use = EnumContactUse.work;
-            contact.Value = "http://www." + emailProviders[randomGenerator.Next(0, emailProviders.Length)] + "/contact";
+            contact.system = EnumContactSystem.url;
+            contact.use = EnumContactUse.work;
+            contact.value = "http://www." + emailProviders[randomGenerator.Next(0, emailProviders.Length)] + "/contact";
 
             return contact;
         }
